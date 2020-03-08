@@ -4,11 +4,11 @@
 
 `Docker`是一个用于开发，交付和运行应用程序的开放平台。
 
-* [简介](Guides/get_started/docker_overview.md)
-* [基础操作](basic/README.md)
-    * [安装](basic/install.md)
-    * [镜像](basic/image.md)
-    * [容器](basic/container.md)
+* [简介](guides/get_started/docker_overview.md)
+* [基础操作](base/README.md)
+    * [安装](base/install.md)
+    * [镜像](base/image.md)
+    * [容器](base/container.md)
 * [教程](guides/README.md) **官方**
     * [获取Docker](guides/get_docker.md)
     * [开始](guides/get_started/README.md)
