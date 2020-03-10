@@ -41,7 +41,7 @@
 - 您的开发人员在本地编写代码，并使用`Docker`容器与同事共享他们的工作。
 - 他们使用`Docker`将其应用程序推送到测试环境中，并执行自动和手动测试。
 - 当开发人员发现错误时，他们可以在开发环境中对其进行修复，然后将其重新部署到测试环境中以进行测试和验证。
-- 测试完成后，将修补程序推送给生产环境就像将更新的映像推送到生产环境一样简单。
+- 测试完成后，将修补程序推送给生产环境就像将更新的镜像推送到生产环境一样简单。
 
 ### 响应式部署和扩展
 
@@ -66,9 +66,9 @@
 `Docker`客户端（`docker`）是许多`Docker`用户与`Docker`交互的主要方式。当您使用诸如`docker run`之类的命令时，客户端会将这些命令发送至`dockerd`，然后执行它们。 `docker`命令使用`Docker API`。 `Docker`客户端可以与多个守护程序通信。
 
 ### `Docker`仓库
-`Docker`仓库存储`Docker`映像。 `Docker Hub`是任何人都可以使用的公共注册表，并且`Docker`配置为默认在`Docker Hub`上查找映像。您甚至可以运行自己的私人仓库。如果使用`Docker`数据中心（`DDC`），则其中包括`Docker`可信注册表（`DTR`）。
+`Docker`仓库存储`Docker`镜像。 `Docker Hub`是任何人都可以使用的公共仓库，并且`Docker`配置为默认在`Docker Hub`上查找镜像。您甚至可以运行自己的私人仓库。如果使用`Docker`数据中心（`DDC`），则其中包括`Docker`可信任仓库（`DTR`）。
 
-使用`docker pull`或`docker run`命令时，所需的映像将从配置的仓库中提取。使用`docker push`命令时，会将映像推送到配置的仓库。
+使用`docker pull`或`docker run`命令时，所需的镜像将从配置的仓库中提取。使用`docker push`命令时，会将镜像推送到配置的仓库。
 
 ### `Docker`对象
 使用`Docker`时，您正在创建和使用镜像，容器，网络，卷，插件和其他对象。本节是其中一些对象的简要概述。
@@ -93,7 +93,7 @@ $ docker run -i -t ubuntu /bin/bash
 ```
 当您运行此命令时，会发生以下情况（假设您使用的是默认配置）：
 
-1. 如果本地没有`ubuntu`镜像，则`Docker`会将其从配置的注册表中拉出，就像您已手动运行`docker pull ubuntu`一样。
+1. 如果本地没有`ubuntu`镜像，则`Docker`会将其从配置的仓库中拉出，就像您已手动运行`docker pull ubuntu`一样。
 
 2. `Docker`创建了一个新容器，就像您已经手动运行`docker container create`命令一样。
 
