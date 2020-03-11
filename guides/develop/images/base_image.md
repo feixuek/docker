@@ -34,7 +34,7 @@ DISTRIB_DESCRIPTION="Ubuntu 16.04 LTS"
 - `Debian/Ubuntu`
 
 ## 从头开始创建简单的父镜像
-您可以使用`Docker`保留的最小镜像刮痕作为构建容器的起点。 使用临时的“镜像”向构建过程发出信号，表示您希望`Dockerfile`中的下一个命令成为镜像中的第一个文件系统层。
+您可以使用`Docker`保留的最小镜像`scratch`作为构建容器的起点。 使用临时的“镜像”向构建过程发出信号，表示您希望`Dockerfile`中的下一个命令成为镜像中的第一个文件系统层。
 
 当`scratch`出现在集线器上`Docker`的存储库中时，您将无法对其进行拉取，运行或使用`scratch`名称标记任何镜像。 相反，您可以在`Dockerfile`中引用它。 例如，使用`scratch`创建一个最小的容器：
 ```Dockerfile

@@ -134,7 +134,7 @@ $ docker build --no-cache --progress=plain --secret id=mysecret,src=mysecret.txt
 ...
 ```
 
-## 使用`SSH访`问构建中的私有数据
+## 使用`SSH`访问构建中的私有数据
 > 致谢：有关更多信息和示例，请参阅[`Docker 18.09`中的`Build secrets`和`SSH`转发](https://medium.com/@tonistiigi/build-secrets-and-ssh-forwarding-in-docker-18-09-ae8161d066)。
 
 `docker`构建具有`--ssh`选项，以允许`Docker Engine`转发`SSH`代理连接。 有关`SSH`代理的更多信息，请参见[`OpenSSH`手册页](https://man.openbsd.org/ssh-agent)。
@@ -162,9 +162,10 @@ RUN --mount=type=ssh git clone git@github.com:myorg/myproject.git myproject
 $ docker build --ssh default .
 ```
 
-## 故障排除：私人注册表的问题
-`X509`：未知当局签署的证书
-如果您要从不安全的注册表中获取镜像（使用自签名证书）和/或使用此类注册表作为镜像，那么您将面临`Docker 18.09`中的一个已知问题：
+## 故障排除：私人仓库的问题
+`X509`：未知签署的证书
+
+如果您要从不安全的仓库中获取镜像（使用自签名证书）和/或使用此类仓库作为镜像，那么您将面临`Docker 18.09`中的一个已知问题：
 ```shell
 [+] Building 0.4s (3/3) FINISHED
  => [internal] load build definition from Dockerfile
@@ -177,7 +178,7 @@ $ docker build --ssh default .
 ------
 failed to do request: Head https://repo.mycompany.com/v2/docker/dockerfile/manifests/experimental: x509: certificate signed by unknown authority
 ```
-解决方案：正确保护注册表。 您可以免费从`Let's Encrypt`获取`SSL`证书。 参见`https://docs.docker.com/registry/deploying/`
+解决方案：正确保护仓库。 您可以免费从`Let's Encrypt`获取`SSL`证书。 参见`https://docs.docker.com/registry/deploying/`
 
 在`SONATYPE NEXUS`版本`<3.15上`运行时，未找到镜像
 如果您使用的`Sonatype Nexus`版本`<3.15`运行私有注册表，并收到类似于以下内容的错误：

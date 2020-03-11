@@ -1,6 +1,6 @@
 # 使用覆盖网络
 
-覆盖网络驱动程序会在多个`Docker`守护程序主机之间创建一个分布式网络。该网络位于特定于主机的网络之上（（覆盖）特定主机的网络），从而在启用加密后允许与其连接的容器（包括群集服务容器）进行安全通信。 `Docker`透明地处理每个数据包与正确的`Docker`守护程序主机和正确的目标容器之间的路由。
+覆盖网络驱动程序会在多个`Docker`守护程序主机之间创建一个分布式网络。该网络位于特定于主机的网络之上（（覆盖）特定主机的网络），从而在启用加密后允许与其连接的容器（包括`swarm`服务容器）进行安全通信。 `Docker`透明地处理每个数据包与正确的`Docker`守护程序主机和正确的目标容器之间的路由。
 
 初始化群集或将`Docker`主机加入现有群集时，将在该`Docker`主机上创建两个新网络：
 
@@ -80,7 +80,7 @@ $ docker network create \
 
 4. 重新启动您在第一步中停止的服务。
 
-### 自定义docker_gwbridge接口
+### 自定义`docker_gwbridge`接口
 `docker_gwbridge`是一个虚拟网桥，用于将覆盖网络（包括入口网络）连接到单个`Docker`守护程序的物理网络。 当您初始化群集或将`Docker`主机加入群集时，`Docker`会自动创建它，但它不是`Docker`设备。 它存在于`Docker`主机的内核中。 如果需要自定义其设置，则必须在将`Docker`主机加入群集之前或从群集中暂时删除主机之后进行。
 
 1. 停止Docker。
@@ -105,4 +105,4 @@ docker_gwbridge
 5. 初始化或加入群。 由于该桥已经存在，因此Docker不会使用自动设置来创建它。
 
 ## [swarm服务的操作](https://docs.docker.com/network/overlay/#operations-for-swarm-services)
-## 覆盖网络上独立容器的操作[https://docs.docker.com/network/overlay/#operations-for-standalone-containers-on-overlay-networks]
+## [覆盖网络上独立容器的操作](https://docs.docker.com/network/overlay/#operations-for-standalone-containers-on-overlay-networks)

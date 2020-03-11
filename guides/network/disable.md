@@ -26,7 +26,7 @@ $ docker exec no-net-alpine ip route
 ```
 第二个命令返回空，因为没有路由表。
 
-3. 停止容器。 它是使用--rm标志创建的，因此会自动删除。
+3. 停止容器。 它是使用`--rm`标志创建的，因此会自动删除。
 ```shell
 $ docker container rm no-net-alpine
 ```
